@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <title>Slide Show</title>
+  <!-- CSS -->
+  <style>
+
+  /* Slide Show Styles */
+  .slides-inner {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    overflow: hidden;
+  }
+  .slide-show {
+    overflow: hidden;
+    position: relative;
+  }
+
+    /* Developer Styles */
+    #slides {
+      border: 2px solid black;
+      width: 1200px;
+      height: 400px;
+      margin: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+  
+<!-- HTML -->
+<div id="slides" class="slide-show">
+  <div class="slides-inner">
+    <img src="images/bee-1200-400.jpg" width="1200" height="400" alt="bee">
+    <img src="images/beetle-1200-400.jpg" width="1200" height="400" alt="beetle">
+    <img src="images/dandelion-1200-400.jpg" width="1200" height="400" alt="dandelion">
+    <img src="images/ladybug-1200-400.jpg" width="1200" height="400" alt="ladybug">
+  </div>
+</div>
+
+
+<!-- JS -->
+<script>
+  function makeSlideShow(slidesID) {
+      const slides = document.getElementById(slidesID)
+      const slidesInner = slides.querySelector('.slides-inner')
+      const images = slidesInner.querySelectorAll('img')
+
+      console.log(images)
+      console.log(images.length)
+  }
+  makeSlideShow('slides')
+</script>
+</body>
+</html>
