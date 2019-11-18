@@ -25,6 +25,12 @@
       margin: auto;
     }
 
+    #slides-2 {
+        border: 2px solid black;
+        width: 300px;
+        height: 169px;
+    }
+
   </style>
 </head>
 
@@ -40,6 +46,17 @@
   </div>
 </div>
 
+<div id="slides-2" class="slide-show">
+    <div class="slides-inner">
+        <img src="images/hellebore-pollen-300-169.jpg" width="300" height="169" alt="hellbore">
+        <img src="images/li-pollen-300-169.jpg" width="300" height="169" alt="li-pollen">
+        <img src="images/pollen-300-169.jpg" width="300" height="169 alt="pollen">
+        <img src="images/spores-300-169.jpg" width="300" height="169" alt="spores">
+        <img src="images/zsa-300-169.jpg" width="300" hieght="169"alt="zsa">
+    </div>
+
+</div>
+
 
 <!-- JS -->
 <script>
@@ -48,6 +65,7 @@
       const slidesInner = slides.querySelector('.slides-inner')
       const images = slidesInner.querySelectorAll('img')
 
+      const slidesWidth = slides.clientWidth
       let index = 0
 
       setInterval(function () {
@@ -58,14 +76,14 @@
         // CSS - transform: translate3d(0, 0, 0);
         // slides are not transitioning from one picture to the next
         //                transform:   translate3d(-1200px, 0, 0)
-        slidesInner.style.transform = `translate3d(${index * -1200}px, 0, 0)`
-        console.log(index)
-        console.log(slidesInner.style)
+        slidesInner.style.transform = `translate3d(${index * -slidesWidth}px, 0, 0)`
+        console.log(index * -slidesWidth)
 
       },2000)
 
   }
   makeSlideShow('slides')
+  makeSlideShow('slides-2')
 </script>
 </body>
 </html>
